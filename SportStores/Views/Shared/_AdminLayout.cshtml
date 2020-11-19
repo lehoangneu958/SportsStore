@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/"
+          asp-href-exclude="**/*-reboot*,**/*-grid*">
+    <title>@ViewBag.Title</title>
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+        <script src="/lib/jquery/" > </script >
+        <script src="/lib/jQuery-Validation/" > </script >
+        <script
+        src="/lib/jquery-validation-unobtrusive/" >
+        </script >
+    </style>
+</head>
+<body class="m-1 p-1">
+    <div class="bg-info p-2"><h4>@ViewBag.Title</h4></div>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
+    @RenderBody()
+</body>
+</html>
